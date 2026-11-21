@@ -1,0 +1,246 @@
+// NexVora ONE Home dashboard — palette from the NexVora design spec.
+$nx-bg: #050714;
+$nx-bg2: #090b18;
+$nx-surface: #10152a;
+$nx-purple: #702cff;
+$nx-purple2: #8957ff;
+$nx-cyan: #00d5ff;
+$nx-text2: #a6aec8;
+
+#welcome-tab.nx-home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100%;
+  padding: 28px 18px 32px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #fff;
+  background:
+    radial-gradient(120% 60% at 50% -10%, rgba($nx-purple, 0.45), transparent 60%),
+    radial-gradient(80% 40% at 100% 0%, rgba($nx-cyan, 0.12), transparent 70%),
+    $nx-bg;
+
+  .nx-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+
+    .nx-logo {
+      border-radius: 18px;
+      box-shadow: 0 0 28px rgba($nx-purple2, 0.55);
+    }
+    h1 {
+      margin: 8px 0 0;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      span { color: $nx-cyan; }
+    }
+    .nx-tagline {
+      margin: 0;
+      color: $nx-text2;
+      font-size: 14px;
+    }
+  }
+
+  .nx-welcome {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    border: 1px solid rgba($nx-purple2, 0.5);
+    background: linear-gradient(135deg, rgba($nx-purple, 0.4), rgba($nx-surface, 0.8));
+    box-shadow: 0 0 18px rgba($nx-purple, 0.25);
+    backdrop-filter: blur(10px);
+
+    .nx-avatar {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-weight: 700;
+      background: linear-gradient(135deg, $nx-purple, $nx-purple2);
+    }
+    .nx-welcome-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      small { color: $nx-text2; }
+    }
+  }
+
+  .nx-section-head h2 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .nx-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .nx-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 84px;
+    padding: 10px 6px;
+    color: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba($nx-purple2, 0.45);
+    background: linear-gradient(160deg, rgba($nx-surface, 0.95), rgba($nx-bg2, 0.9));
+    box-shadow: 0 0 12px rgba($nx-purple, 0.18), inset 0 0 12px rgba($nx-cyan, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:active {
+      transform: scale(0.96);
+      box-shadow: 0 0 18px rgba($nx-cyan, 0.45);
+    }
+    .icon {
+      font-size: 24px;
+      color: $nx-cyan;
+    }
+    .nx-card-label {
+      font-size: 12px;
+      text-align: center;
+    }
+    em {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      font-size: 9px;
+      font-style: normal;
+      color: $nx-text2;
+    }
+    &.unavailable {
+      .icon { color: $nx-purple2; }
+      opacity: 0.8;
+    }
+  }
+
+  .nx-list {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba($nx-purple2, 0.35);
+    background: rgba($nx-surface, 0.85);
+  }
+  .nx-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 0 14px;
+
+    &:not(:last-child) { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+    &:active { background: rgba($nx-purple, 0.25); }
+    .icon:first-child { color: $nx-cyan; }
+    span:nth-child(2) { flex: 1; }
+    .icon:last-child { color: $nx-text2; }
+  }
+
+  .nx-footer {
+    margin-top: auto;
+    text-align: center;
+    color: $nx-text2;
+    font-size: 11px;
+    p { margin: 2px 0; }
+    a { color: $nx-cyan; display: inline-block; margin-top: 8px; }
+  }
+}
+
+.nx-toolbox {
+  .nx-tb-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    min-height: 100%;
+    color: #fff;
+    background: #050714;
+  }
+  .nx-tb-hint { margin: 0; font-size: 12px; color: #a6aec8; }
+  .nx-tb-select, .nx-tb-input {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-family: monospace;
+    border-radius: 12px;
+    border: 1px solid rgba(137, 87, 255, 0.5);
+    background: #10152a;
+  }
+  .nx-tb-actions { display: flex; gap: 10px; }
+  .nx-tb-actions button {
+    flex: 1;
+    min-height: 44px;
+    color: #fff;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #702cff, #8957ff);
+  }
+  .nx-tb-output {
+    margin: 0;
+    padding: 12px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    user-select: text;
+    min-height: 80px;
+    color: #00d5ff;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 213, 255, 0.35);
+    background: #090b18;
+    &.error { color: #ff526d; border-color: rgba(255, 82, 109, 0.5); }
+  }
+}
+.nx-api .nx-api-history { border-radius: 12px; border: 1px solid rgba(137, 87, 255, 0.35); background: rgba(16, 21, 42, 0.85); color: #fff; padding: 4px 0; font-size: 12px; word-break: break-all;
+  .nx-row { padding: 8px 12px; min-height: 36px; } }
+.nx-accounts .nx-acc-list { display: flex; flex-direction: column; gap: 12px; }
+.nx-accounts .nx-acc-card { display: flex; flex-direction: column; gap: 6px; padding: 12px; border-radius: 14px; color: #fff; border: 1px solid rgba(137, 87, 255, 0.45); background: #10152a; small { color: #a6aec8; } }
+.nx-db .nx-db-scroll { overflow: auto; max-width: 100%; border-radius: 10px; border: 1px solid rgba(137,87,255,.35); }
+.nx-db .nx-db-table { border-collapse: collapse; font-size: 12px; color: #fff; min-width: 100%; th, td { padding: 6px 10px; border-bottom: 1px solid rgba(255,255,255,.08); white-space: nowrap; text-align: left; } th { color: #00d5ff; background: #090b18; } }
+.nx-db .nx-db-out { display: flex; flex-direction: column; gap: 8px; color: #fff; }
+.nx-ai .nx-ai-chat { display: flex; flex-direction: column; gap: 8px; max-height: 45vh; overflow-y: auto; }
+.nx-ai .nx-ai-msg { padding: 10px 12px; border-radius: 14px; color: #fff; user-select: text; p { margin: 0 0 6px; white-space: pre-wrap; }
+  &.user { align-self: flex-end; background: linear-gradient(135deg, #702cff, #8957ff); max-width: 90%; }
+  &.assistant { align-self: flex-start; background: #10152a; border: 1px solid rgba(0,213,255,.3); max-width: 95%; } }
+
+#welcome-tab.nx-home .nx-bottom-nav {
+  position: sticky;
+  bottom: 8px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-around;
+  padding: 6px;
+  border-radius: 18px;
+  border: 1px solid rgba(137, 87, 255, 0.5);
+  background: rgba(9, 11, 24, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 20px rgba(112, 44, 255, 0.35);
+
+  .nx-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 56px;
+    min-height: 48px;
+    padding: 4px 8px;
+    color: #a6aec8;
+    font-size: 11px;
+    background: none;
+    border: 0;
+    border-radius: 12px;
+    .icon { font-size: 20px; }
+    &.active { color: #00d5ff; text-shadow: 0 0 10px rgba(0, 213, 255, 0.6); }
+    &:active { background: rgba(112, 44, 255, 0.3); }
+  }
+}

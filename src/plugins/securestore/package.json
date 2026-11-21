@@ -1,0 +1,7 @@
+{
+  "name": "nexvora-plugin-securestore",
+  "version": "1.0.0",
+  "description": "Android Keystore-backed secret storage for NexVora ONE account tokens.",
+  "cordova": { "id": "com.nexvora.securestore", "platforms": ["android"] },
+  "license": "MIT"
+}

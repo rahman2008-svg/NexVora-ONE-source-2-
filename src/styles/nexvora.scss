@@ -1,0 +1,42 @@
+// NexVora ONE global polish: glass surfaces, glow borders and rounded cards applied to the
+// inherited Acode screens (dialogs, settings, header, buttons). Colours come from theme variables,
+// so every theme stays coherent; the NexVora ONE theme provides the reference palette.
+$nx-purple: #702cff;
+$nx-purple2: #8957ff;
+$nx-cyan: #00d5ff;
+
+.prompt {
+  border: 1px solid rgba($nx-purple2, 0.55);
+  border-radius: 18px !important;
+  box-shadow: 0 0 24px rgba($nx-purple, 0.35), 0 8px 32px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(14px);
+
+  .title { letter-spacing: 0.3px; }
+  button, .button-container button {
+    border-radius: 12px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    &:active { transform: scale(0.96); box-shadow: 0 0 14px rgba($nx-cyan, 0.5); }
+  }
+  input, textarea {
+    border-radius: 10px;
+    &:focus { outline: none; box-shadow: 0 0 0 2px rgba($nx-cyan, 0.55); }
+  }
+}
+
+.settings-section-card {
+  border: 1px solid rgba($nx-purple2, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 0 14px rgba($nx-purple, 0.15);
+}
+
+.header, header {
+  border-bottom: 1px solid rgba($nx-purple2, 0.35);
+  box-shadow: 0 2px 16px rgba($nx-purple, 0.25);
+}
+
+#root .tile:active, .list-item:active { background: rgba($nx-purple, 0.25); }
+
+// Smooth screen transitions
+wc-page, .page { animation: nx-fade-in 0.18s ease-out; }
+@keyframes nx-fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { wc-page, .page { animation: none; } }

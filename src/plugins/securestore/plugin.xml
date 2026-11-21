@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.nexvora.securestore" version="1.0.0">
+    <name>SecureStore</name>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="SecureStore">
+                <param name="android-package" value="com.nexvora.securestore.SecureStore" />
+            </feature>
+        </config-file>
+        <framework src="androidx.security:security-crypto:1.1.0" />
+        <source-file src="src/android/SecureStore.java" target-dir="src/com/nexvora/securestore" />
+    </platform>
+</plugin>
