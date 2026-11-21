@@ -5,7 +5,7 @@
   "description": "NexVora ONE - Build Anything. Anywhere. Android development studio (based on Acode, MIT).",
   "scripts": {
     "lang": "node ./utils/lang.js",
-    "build": "sh utils/scripts/build.sh",
+    "build": "bash utils/scripts/build.sh",
     "start": "sh utils/scripts/start.sh",
     "dev": "node utils/scripts/dev.js",
     "dev:android": "node utils/scripts/dev.js android",
