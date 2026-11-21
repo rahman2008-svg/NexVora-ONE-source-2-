@@ -4,13 +4,19 @@ android {
     }
     buildTypes {
         release {
-            //might cause ClassNotFoundException errors
-            //to fix those errors you need to either put @Keep on the class/feild or add a entry in progrud rules file
+            // Keep release shrinking enabled; missing dependency classes are
+            // supplied below rather than hiding R8 diagnostics.
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+dependencies {
+    // Google Tink references these compile-time annotation types. Make them
+    // available to R8 on the release runtime classpath.
+    implementation 'com.google.errorprone:error_prone_annotations:2.53.0'
 }
 
 configurations {
