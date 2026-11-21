@@ -215,6 +215,15 @@ jobs:
 
           echo "Debug APK created successfully."
 
+      # Upload Debug APK before attempting Release build
+      - name: Upload Debug APK immediately
+        uses: actions/upload-artifact@v4
+        with:
+          name: NexVora-ONE-Debug
+          path: dist/NexVora-ONE-Debug.apk
+          if-no-files-found: error
+          retention-days: 30
+
       # 12. Release APK
       - name: Build Release APK
         shell: bash
